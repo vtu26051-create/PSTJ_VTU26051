@@ -1,0 +1,21 @@
+int seriesN(int a, int b, int c, int N)
+{
+    if (N == 1) return a;
+    if (N == 2) return b;
+    if (N == 3) return c;
+
+    int d1 = b - a;
+    int d2 = c - b;
+
+    int curr = c;
+
+    for (int i = 4; i <= N; i++)
+    {
+        if (i % 2 == 0)
+            curr = curr + d1;
+        else
+            curr = curr + d2;
+    }
+
+    return curr;
+}
